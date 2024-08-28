@@ -1,10 +1,9 @@
 from AsyncPayments.cryptoBot import AsyncCryptoBot
 
 from aiogram import Bot, Router, F
-from aiogram.types import CallbackQuery, InlineKeyboardButton, InlineKeyboardMarkup
+from aiogram.types import CallbackQuery
 
-from data.database import get_value_from_json
-from config import PRICE_PATH, CRYPTO_BOT_TOKEN
+from config import CRYPTO_BOT_TOKEN
 
 router = Router()
 
