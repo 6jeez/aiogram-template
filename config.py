@@ -2,3 +2,6 @@ TOKEN = "6966135514:AAF2ECN9FBf6wGQSeN1uldByBrVIp6IYyTQ"
 ADMIN_ID = 123
 
 DB_PATH = "data/database.db"
+PRICE_PATH = "data/prices.json"
+
+CRYPTO_BOT_TOKEN = "192142:AAEzSv7nPDdyUiukLuXHUhz2XZtS0c70Wcn"

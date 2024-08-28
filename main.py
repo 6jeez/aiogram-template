@@ -1,9 +1,11 @@
 import asyncio
 from aiogram import Bot, Dispatcher
 
-from config import TOKEN, DB_PATH
 from handlers import user_commands, products_menu
+from callbacks import buy_product, check_payment
+
 from data.database import initialize_db
+from config import TOKEN, DB_PATH
 
 
 async def main():
@@ -12,7 +14,12 @@ async def main():
     bot = Bot(TOKEN)
     dp = Dispatcher()
 
-    dp.include_routers(user_commands.router, products_menu.router)
+    dp.include_routers(
+        user_commands.router,
+        products_menu.router,
+        buy_product.router,
+        check_payment.router,
+    )
 
     await bot.delete_webhook(drop_pending_updates=True)
     await dp.start_polling(bot)
