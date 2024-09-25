@@ -1,4 +1,3 @@
-import json
 import aiosqlite
 
 
@@ -47,20 +46,3 @@ async def add_user_if_not_exists(db_path: str, user_id: int) -> bool:
     except Exception as e:
         print(f"Ошибка при добавлении пользователя: {e}")
         return False
-
-
-def get_value_from_json(file_path: str, key: str):
-    """
-    Возвращает значение из JSON-файла по заданному ключу.
-
-    :param file_path: Путь к JSON-файлу.
-    :param key: Ключ, по которому нужно получить значение.
-    :return: Значение, соответствующее заданному ключу, или None, если ключ не найден.
-    """
-    try:
-        with open(file_path, "r", encoding="utf-8") as file:
-            data = json.load(file)
-            return data.get(key, None)
-    except (FileNotFoundError, json.JSONDecodeError) as e:
-        print(f"Ошибка при работе с файлом: {e}")
-        return None

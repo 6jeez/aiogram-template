@@ -1,8 +1,7 @@
 import asyncio
 from aiogram import Bot, Dispatcher
 
-from handlers import user_commands, products_menu
-from callbacks import buy_product, check_payment
+from handlers import user_commands
 
 from data.database import initialize_db
 from config import TOKEN, DB_PATH
@@ -16,9 +15,6 @@ async def main():
 
     dp.include_routers(
         user_commands.router,
-        products_menu.router,
-        buy_product.router,
-        check_payment.router,
     )
 
     await bot.delete_webhook(drop_pending_updates=True)
